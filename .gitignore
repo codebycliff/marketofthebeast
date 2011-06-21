@@ -10,5 +10,4 @@ tmp/
 *.project
 .DS_Store
 *.pidaproject
-*.lock
 .idea/
