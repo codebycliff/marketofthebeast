@@ -12,4 +12,8 @@ class StaticController < ApplicationController
     @title = 'About'
   end
 
+  def legal
+    @title = 'Legal'
+  end
+
 end

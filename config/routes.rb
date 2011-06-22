@@ -1,7 +1,11 @@
 Marketofthebeast::Application.routes.draw do
-  get "static/about"
-  get "static/home"
-  get "static/contact"
+  get "users/new"
+  match '/join', :to => 'users#new'
+  match '/about', :to => 'static#about'
+  match '/contact', :to => 'static#contact'
+  match '/legal', :to => 'static#legal'
+
+  root :to => 'static#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
