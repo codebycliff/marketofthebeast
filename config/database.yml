@@ -3,27 +3,24 @@ development:
   encoding: utf8
   database: marketofthebeast
   pool: 5
-  username: root
-  password: "!elrenoSUBWAY1"
-  socket: /var/run/mysqld/mysqld.sock
-  host: localhost
+  username: marketofthebeast
+  password: "Vityifewd2"
+  host: marketofthebeast.db.8144713.hostedresource.com
 
 test:
   adapter: mysql
   encoding: utf8
   database: marketofthebeast
   pool: 5
-  username: root
-  password: "!elrenoSUBWAY1"
-  socket: /var/run/mysqld/mysqld.sock
-  host: localhost
+  username: marketofthebeast
+  password: "Vityifewd2"
+  host: marketofthebeast.db.8144713.hostedresource.com
 
 production:
   adapter: mysql
   encoding: utf8
   database: marketofthebeast
   pool: 5
-  username: root
-  password: "!elrenoSUBWAY1"
-  socket: /var/run/mysqld/mysqld.sock
-  host: localhost
+  username: marketofthebeast
+  password: "Vityifewd2"
+  host: marketofthebeast.db.8144713.hostedresource.com
