@@ -4,11 +4,14 @@ log/*.log
 *.log
 tmp/
 /tmp/
+doc/
 *.swp
 *~
+.idea/
 .project
 *.project
-.DS_Store
 *.pidaproject
+*.vimproj
+.DS_Store
 .idea/
 bin/

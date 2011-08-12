@@ -1,26 +1,26 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: marketofthebeast
+  database: MarketOfTheBeast
   pool: 5
-  username: marketofthebeast
-  password: "Vityifewd2"
-  host: marketofthebeast.db.8144713.hostedresource.com
+  username: root
+  password: "!elrenoSUBWAY1"
+  host: localhsot
 
 test:
   adapter: mysql
   encoding: utf8
-  database: marketofthebeast
+  database: MarketOfTheBeast
   pool: 5
-  username: marketofthebeast
-  password: "Vityifewd2"
-  host: marketofthebeast.db.8144713.hostedresource.com
+  username: root
+  password:  "!elrenoSUBWAY1"
+  host: localhost
 
 production:
   adapter: mysql
   encoding: utf8
-  database: marketofthebeast
+  database: MarketOfTheBeast
   pool: 5
-  username: marketofthebeast
-  password: "Vityifewd2"
-  host: marketofthebeast.db.8144713.hostedresource.com
+  username: root
+  password: "!elrenoSUBWAY1"
+  host: localhost
