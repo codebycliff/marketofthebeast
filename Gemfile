@@ -4,9 +4,14 @@ gem 'rails', '3.0.9'
 gem 'mysql'
 gem 'wirble'
 gem 'awesome_print'
+gem 'hirb'
+gem 'map_by_method'
+gem 'what_methods'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
+  gem 'spork'
+  gem 'annotate'
 end
 
 group :test do
@@ -16,7 +21,7 @@ group :test do
   #gem 'autotest'
   #gem 'autotest-rails-pure'
   #gem 'autotest-notification'
-  #gem 'spork'
+  gem 'spork'
 end
 
 # Extra Gems
