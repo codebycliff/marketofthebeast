@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'spec_helper'
 
 describe User do
@@ -21,7 +32,7 @@ describe User do
   end
 
   it "should reject names that are too long" do
-    long_name = "a" * 51
+    long_name = "a" * 65
     long_name_user = User.new(@attr.merge(:name => long_name))
     long_name_user.should_not be_valid
   end
