@@ -1,14 +1,14 @@
 URL Mappings
 --------------------------------------------------------------------------------
-HTTP    URL             ACTION          PURPOSE
+HTTP    URL             Action      Named_Route         Purpose
 --------------------------------------------------------------------------------
-GET     /users         index           Page to list all users
-GET     /users/1       show            Page to show user with id 1
-GET     /users/new     new             Page to make a new user
-POST    /users         create          Create a new user
-GET     /users         edit            Page to edit user with id 1
-PUT     /users/1       update          Update user with id 1
-DELETE  /users/1       destroy         Delete user with id 1
+GET     /users         index        users_path          Page to list all users
+GET     /users/1       show         user_path(1)        Page to show user with id 1
+GET     /users/new     new          new_user_path       Page to make a new user
+POST    /users         create       users_path          Create a new user
+GET     /users         edit         edit_user_path(1)   Page to edit user with id 1
+PUT     /users/1       update       user_path(1)        Update user with id 1
+DELETE  /users/1       destroy      user_path(1)        Delete user with id 1
 
 Alternate Environments
 --------------------------------------------------------------------------------
