@@ -5,7 +5,7 @@ development:
   pool: 5
   username: root
   password: "!elrenoSUBWAY1"
-  host: localhsot
+  host: localhost
 
 test:
   adapter: mysql

@@ -1,4 +1,5 @@
 Marketofthebeast::Application.routes.draw do
+
   get "users/new"
   match '/join', :to => 'users#new'
   match '/about', :to => 'static#about'

@@ -1,20 +1,22 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.0.9'
 gem 'mysql'
+gem 'wirble'
+gem 'awesome_print'
 
 group :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.6.1'
 end
 
 group :test do
-  gem 'rspec', '2.5.0'
+  gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
-  gem 'ZenTest'
-  gem 'autotest'
-  gem 'autotest-rails-pure'
-  gem 'autotest-notification'
-  gem 'spork'
+  #gem 'ZenTest'
+  #gem 'autotest'
+  #gem 'autotest-rails-pure'
+  #gem 'autotest-notification'
+  #gem 'spork'
 end
 
 # Extra Gems
