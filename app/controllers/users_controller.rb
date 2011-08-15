@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @title = "Join the MOB"
+    @title = "Join Now"
   end
 
 end

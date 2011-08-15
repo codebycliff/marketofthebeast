@@ -24,7 +24,7 @@ describe "LayoutLinks" do
 
   it "should have a Join page at '/join'" do
     get '/join'
-    response.should have_selector('title', :content => "Join the MOB")
+    response.should have_selector('title', :content => "Join Now")
   end
 
 

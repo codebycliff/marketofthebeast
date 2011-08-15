@@ -15,14 +15,14 @@ describe User do
 
   before (:each) do
     @attr = { 
-      :name => "Example User",
-      :email => "user@example.com",
-      :password => "foobar",
-      :password_confirmation => "foobar"
+      :name => "Cliff Braton",
+      :email => "cliff.braton@gmail.com",
+      :password => "elreno69",
+      :password_confirmation => "elreno69"
     }
   end
 
-  it "should create a enw instance given valid attributes" do
+  it "should create a new instance given valid attributes" do
     User.create!(@attr)
   end
 
@@ -86,6 +86,7 @@ describe User do
       hash = @attr.merge(:password => long, :password_confirmation => long)
       User.new(hash).should_not be_valid
     end
+
   end
 
   describe "password encryption" do
@@ -115,21 +116,24 @@ describe User do
     end
 
     describe "authenticate method" do
+
       it "should return nil on email/password mismatch" do
         wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
         wrong_password_user.should be_nil
       end
+
       it "should return nil for an email address with no user" do
-        nonexistent_user = User.authenticate("foo@bar.com", @attr[:password]);
+        nonexistent_user = User.authenticate("foo@bar.com", @attr[:password])
         nonexistent_user.should be_nil
       end
+
       it "should return the user on email/password match" do
-        matching_user = User.authenticate(@attr[:email], @attr[:email]);
+        matching_user = User.authenticate(@attr[:email], @attr[:password])
         matching_user.should == @user
       end
+
     end
 
   end
-
 
 end

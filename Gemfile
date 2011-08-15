@@ -2,26 +2,27 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'mysql'
-gem 'wirble'
-gem 'awesome_print'
-gem 'hirb'
-gem 'map_by_method'
-gem 'what_methods'
 
-group :development do
-  gem 'rspec-rails', '2.6.1'
-  gem 'spork'
+group :development,:test do
+
   gem 'annotate'
-end
+  gem 'rspec-rails'
 
-group :test do
-  gem 'rspec-rails', '2.6.1'
-  gem 'webrat', '0.7.1'
-  #gem 'ZenTest'
-  #gem 'autotest'
-  #gem 'autotest-rails-pure'
+  # Testing
+  gem 'ZenTest'
+  gem 'autotest-rails'
   #gem 'autotest-notification'
   gem 'spork'
+  gem 'webrat'
+  gem 'watchr'
+  gem 'factory_girl_rails'
+
+  # IRB 
+  gem 'wirble'
+  gem 'hirb'
+  gem 'awesome_print'
+  gem 'map_by_method'
+  gem 'what_methods'
 end
 
 # Extra Gems
