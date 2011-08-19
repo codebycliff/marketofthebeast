@@ -1,10 +1,21 @@
 <header>
-<% logo = image_tag('sticker-logo.jpg', :alt => 'Market of the Beast', :class => 'round', :width => '412', :height => '160') %>
+  <div id='header-date'>Friday, August 19, 2011</div>
+  <% logo = image_tag('newspaper-title.png', :alt => 'Market of the Beast') %>
   <%= link_to logo, root_path %>
-  <nav class='round'>
-    <ul>
-      <li><%= link_to "Home", root_path %> </li>
-      <li><%= link_to "Sign in", "#" %> </li>
+  <nav id="menu" >
+    <ul class='left'>
+      <li id="menu-static-home" class="selected-menu-item" > <%= link_to "Home", root_path %></li> |
+      <li id="menu-artists-index"><%= link_to "Artists", artists_path  %></li> |
+      <li id="menu-shows-index"><%= link_to "Shows", shows_path %></li> |
+      <li id="menu-users-index"><%= link_to "Community", users_path %></li>
     </ul>
-  </nav>
+    <ul class="right">
+      <li id="menu-users-new"><%= link_to "Subscribe", new_user_path %></li> |
+      <li id="menu-users-login"><%= link_to "Login", "#" %></li>
+    </ul>
+	</nav>
 </header>
+<script>
+  $(".selected-menu-item").removeClass("selected-menu-item");
+  $("#menu-<%= params[:controller] + "-" + params[:action] %>").addClass("selected-menu-item");
+</script>

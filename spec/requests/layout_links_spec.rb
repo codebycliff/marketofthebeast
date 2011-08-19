@@ -22,9 +22,9 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Legal")
   end
 
-  it "should have a Join page at '/join'" do
-    get '/join'
-    response.should have_selector('title', :content => "Join Now")
+  it "should have a Join page at '/subscribe'" do
+    get '/subscribe'
+    response.should have_selector('title', :content => "Subscribe Now")
   end
 
 
