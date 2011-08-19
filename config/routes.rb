@@ -1,5 +1,7 @@
 Marketofthebeast::Application.routes.draw do
 
+  resources :artists
+
   resources :users
 
   match '/subscribe', :to => 'users#new'
