@@ -1,12 +1,12 @@
 <header>
-  <div id='header-date'>Friday, August 19, 2011</div>
+<div id='header-date'><%= Time.now.strftime("%A, %B %d, %Y").sub(/\b0(\d)\b/, '\1') %></div>
   <% logo = image_tag('newspaper-title.png', :alt => 'Market of the Beast') %>
   <%= link_to logo, root_path %>
   <nav id="menu" >
     <ul class='left'>
       <li id="menu-static-home" class="selected-menu-item" > <%= link_to "Home", root_path %></li> |
       <li id="menu-artists-index"><%= link_to "Artists", artists_path  %></li> |
-      <li id="menu-shows-index"><%= link_to "Shows", shows_path %></li> |
+      <li id="menu-shows-index"><%= link_to "Shows", "#" %></li> |
       <li id="menu-users-index"><%= link_to "Community", users_path %></li>
     </ul>
     <ul class="right">
