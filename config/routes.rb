@@ -1,6 +1,8 @@
 Marketofthebeast::Application.routes.draw do
 
 
+  resources :shows
+
   resources :artists
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

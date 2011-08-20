@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @show.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @show.description %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @show.when %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @show.where %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @show.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_show_path(@show) %> |
+<%= link_to 'Back', shows_path %>
