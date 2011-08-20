@@ -10,4 +10,9 @@ module ApplicationHelper
     end
   end
 
+  def logo_image
+    image_tag("newspaper-title.png", :alt => "The Market of the Beast")
+  end
+
+
 end

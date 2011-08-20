@@ -1,7 +1,6 @@
 <header>
 <div id='header-date'><%= Time.now.strftime("%A, %B %d, %Y").sub(/\b0(\d)\b/, '\1') %></div>
-  <% logo = image_tag('newspaper-title.png', :alt => 'Market of the Beast') %>
-  <%= link_to logo, root_path %>
+  <%= link_to logo_image, root_path %>
   <nav id="menu" >
     <ul class='left'>
       <li id="menu-static-home" class="selected-menu-item" > <%= link_to "Home", root_path %></li> |
@@ -10,8 +9,13 @@
       <li id="menu-users-index"><%= link_to "Community", users_path %></li>
     </ul>
     <ul class="right">
+      <% if signed_in? %>
+      <li id="menu-users-show"><%= link_to "Profile", current_user %></li> |
+      <li id="menu-session-destroy"><%= link_to "Logout", logout_path, :method => :delete %></li>
+      <% else %>
       <li id="menu-users-new"><%= link_to "Subscribe", new_user_path %></li> |
-      <li id="menu-users-login"><%= link_to "Login", new_session_path %></li>
+      <li id="menu-sessions-new"><%= link_to "Login", login_path %></li>
+      <% end %>
     </ul>
 	</nav>
 </header>

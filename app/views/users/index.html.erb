@@ -10,9 +10,10 @@
         <td style='text-align: center; width: 25%;'>
         <% if users.length > 0 %>
             <% user = users.pop %>
-            <%= gravatar_for(user) %>
+            <% avatar = gravatar_for(user) %>
+            <%= link_to avatar, user %>
             <br/>
-            <%= user.name %>
+            <%= link_to user.name, user %>
         <% end %>
         </td>
       <% end %>
