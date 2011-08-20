@@ -12,10 +12,16 @@ task :load do
     User.create!(:name => "Doubting Daniel and the Deliverance" , :email => "doubtingdaniel@gmail.com", :password => "doubtingdaniel", :password_confirmation => "doubtingdaniel")
   ]
   info = ["2009 - current", "2010 - current", "2011 - current"]
+  link_info = {
+    "Facebook" => "http://facebook.com/",
+    "Twitter" => "http://twitter.com/",
+    "Reverb Nation" => "http://reverbnation.com/"
+  }
   fake_bio = 'lorem ipsum dolor sit amet, consectetur adipiscing elit. ut non aliquam risus. nunc porta viverra ornare. vivamus vitae elit nulla. phasellus fringilla nisl eget urna pharetra accumsan. vivamus tristique eros et neque posuere scelerisque. curabitur venenatis rhoncus semper. pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. suspendisse potenti. etiam vulputate tempus diam ut blandit. maecenas dapibus urna ac nunc sollicitudin dapibus. proin ut tellus libero, a euismod mi.  donec consectetur, urna ut ultrices elementum, orci magna convallis arcu, vitae rutrum leo dui non sem. suspendisse potenti. quisque bibendum elementum malesuada. praesent et ligula quam. mauris hendrerit sagittis mi, non auctor nisi auctor quis. curabitur ac vestibulum nisi. morbi in magna nulla, vel ultricies sapien. suspendisse eu lorem vel eros tempus condimentum. etiam porta malesuada tortor ac vestibulum. etiam orci nulla, varius eget dignissim et, ultrices vel metus. mauris vel ligula sed turpis vulputate euismod. quisque tempor aliquet molestie. maecenas congue mauris et nisl vestibulum faucibus. suspendisse vestibulum sem vel erat fringilla id lobortis urna viverra. quisque fermentum gravida egestas. quisque luctus orci et eros consequat egestas.'
   idx = 0
   users.each do |user|
     Artist.create!(:user_id => user.id, :name => user.name, :origin => "Des Moines, Iowa", :years_active => info[idx], :bio => fake_bio)
+    link_info.each { |lbl,url| Link.create!(:user_id => user.id, :label => lbl, :href => url + user.name.downcase.gsub(/ /, '')) }
     idx = idx + 1
   end
 

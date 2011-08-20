@@ -14,6 +14,7 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
 
+  has_many :links
   attr_accessible :name, :email, :password, :password_confirmation
   validates :name, :presence => true, :length => { :maximum => 64 }
   validates :email, :presence => true, :format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, :uniqueness => { :case_sensitive => false }

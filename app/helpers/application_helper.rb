@@ -14,5 +14,13 @@ module ApplicationHelper
     image_tag("newspaper-title.png", :alt => "The Market of the Beast")
   end
 
+  def link_artist_image(artist)
+    filename = "artists/#{artist.name.downcase.gsub(/ /, '_')}.jpg"
+    #if !File.exist?(filename)
+      #filename = "users/#{artist.user.id}.jpg"
+    #end
+    link_to image_tag(filename, :alt => artist.name, :width => "230px", :height => "200px", :style => 'float: left; clear: left; margin: 0.75em;'), artist
+  end
+
 
 end
