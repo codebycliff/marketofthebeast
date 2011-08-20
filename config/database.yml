@@ -1,5 +1,4 @@
-development:
-  adapter: mysql
+development: adapter: mysql
   encoding: utf8
   database: MarketOfTheBeast
   pool: 5
@@ -17,10 +16,7 @@ test:
   host: localhost
 
 production:
-  adapter: mysql
-  encoding: utf8
-  database: MarketOfTheBeast_Production
+  adapter: sqlite3
+  database: db/production.db
   pool: 5
-  username: root
-  password: "!elrenoSUBWAY1"
-  host: localhost
+  timeout: 5000
