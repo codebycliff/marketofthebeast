@@ -1,9 +1,12 @@
 Marketofthebeast::Application.routes.draw do
 
+
   resources :artists
-
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
+  match '/login', :to => "sessions#new"
+  match '/logout', :to => "sessions#destroy"
   match '/subscribe', :to => 'users#new'
   match '/about', :to => 'static#about'
   match '/contact', :to => 'static#contact'

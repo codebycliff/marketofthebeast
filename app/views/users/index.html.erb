@@ -1,20 +1,22 @@
-<h1>Listing Users</h1>
+<h1 style="text-align: center; width: 100%;">Listing Users</h1>
 
+<% row_index = 0 %>
+<% per_row = 5 %>
+<% users = @users %>
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% while users.length > 0 %>
+    <tr>
+      <% 5.times do %>
+        <td style='text-align: center; width: 25%;'>
+        <% if users.length > 0 %>
+            <% user = users.pop %>
+            <%= gravatar_for(user) %>
+            <br/>
+            <%= user.name %>
+        <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
-
 <br />

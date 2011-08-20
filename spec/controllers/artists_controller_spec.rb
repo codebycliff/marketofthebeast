@@ -24,7 +24,13 @@ describe ArtistsController do
   # Artist. As you add validations to Artist, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :user_id => 3,
+      :name => "Wrestling with Wolves",
+      :origin => "Des Moines, IA",
+      :bio => "Lorem Ipsum...",
+      :years_active => "2010 - Current"
+    }
   end
 
   describe "GET index" do
