@@ -18,5 +18,15 @@ task :load do
     Artist.create!(:user_id => user.id, :name => user.name, :origin => "Des Moines, Iowa", :years_active => info[idx], :bio => fake_bio)
     idx = idx + 1
   end
+
+  Show.create!(:title => "Market of the Beast Presents...", :description => "", :who => "Cleos Apartment, [5], [3], Mother Culture, The New Bodies and [4]", :where => "Vaudeville Mews", :when => DateTime.strptime("2011/02/11 19:30:00", "%Y/%m/%d %H:%M:%S"), :cost => "$10")
+  Show.create!(:title => "The War I Survived", :description => "", :who => "The War I Survived, [3]", :where => "Vaudeville Mews", :when => DateTime.strptime("2011/07/16 21:00:00", "%Y/%m/%d %H:%M:%S"), :cost => "$7")
+  Show.create!(:title => "Pictures of Then", 
+               :description => "Hailing from Minneapolis, MN, PICTURES OF THEN is a collision of contradictions that teeters between past and present without staking claim in either. Their hauntingly familiar sound is defined by indulging rebellion, escaping from the shackles of familiarity, tasting freedom for the first time, seizing second chances, unleashing repressed anger, and the inevitable yearning to return to the age of innocence. On the heels of their latest release 'And The Wicked Sea', the band has garnered national recognition with relentless touring, and heaps of press - including featured accolades from the likes of USA Today's Popcandy, Paste Magazine, and Billboard Magazine. Onstage their energy is electric, catapulting from stingingly wistful tunes to full-throttle psychedelic abandon. Their organic and captivating live performance has earned them coveted slots at CMJ (NYC), SXSW (Austin,TX), Summerfest (Milwaukee, WI) and the Billboard Magazine Music Conference (Chicago, IL). The band continues to to tour in support of their current release with plans to release their next album 2011-12.", 
+               :who => 'Pictures of Then, Mystic Dynasty, [4], Vag of Courage, Radiant Heart',
+               :when => DateTime.strptime("2011/08/20 20:00:00", "%Y/%m/%d %H:%M:%S"),
+               :where => "Vaudeville Mews",
+               :cost => "$5")
+  
   sh %{ echo Created users and artists }
 end

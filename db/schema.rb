@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110820123928) do
+ActiveRecord::Schema.define(:version => 20110820133426) do
 
   create_table "artists", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20110820123928) do
     t.string   "years_active"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "shows", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "when"
+    t.string   "where"
+    t.string   "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "who"
   end
 
   create_table "users", :force => true do |t|
