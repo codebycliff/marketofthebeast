@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819222027) do
+ActiveRecord::Schema.define(:version => 20110820123928) do
 
   create_table "artists", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "bio"
+    t.text     "bio",          :limit => 255
     t.string   "origin"
     t.string   "years_active"
     t.datetime "created_at"
