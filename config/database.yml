@@ -19,7 +19,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: MarketOfTheBeast
+  database: MarketOfTheBeast_Production
   pool: 5
   username: root
   password: "!elrenoSUBWAY1"

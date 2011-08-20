@@ -1,29 +1,33 @@
-<h1>Listing artists</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Name</th>
-    <th>Bio</th>
-    <th>Origin</th>
-    <th>Years active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<% current = 1 %>
 <% @artists.each do |artist| %>
-  <tr>
-    <td><%= artist.user_id %></td>
-    <td><%= artist.name %></td>
-    <td><%= artist.bio %></td>
-    <td><%= artist.origin %></td>
-    <td><%= artist.years_active %></td>
-    <td><%= link_to 'Show', artist %></td>
-    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-    <td><%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% if current % 3 == 0 %>
+    <div class='story-container' style='float: left; clear: both; margin: 1em auto 1em auto;  width: 100%; '>
+    <h2 class='headline'><%= artist.name %></h2>
+    <% if (current / 3) % 2 == 0 %>
+      <%= image_tag("artists/#{artist.name.downcase.gsub(/ /, '_')}.jpg", :alt => artist.name, :class => 'story-image-left', :width => "230px", :height => "200px", :style => 'float: right; clear: right; margin: 0.75em;') %>
+    <% else %>
+      <%= image_tag("artists/#{artist.name.downcase.gsub(/ /, '_')}.jpg", :alt => artist.name, :class => 'story-image-left', :width => "230px", :height => "200px", :style => 'float: left; clear: left; margin: 0.75em;') %>
+    <% end %>
+  <% else %>
+    <% if current % 2 == 0 %>
+      <div class='story-container' style='float: right; clear: right; margin: 1em auto 1em 5%; width: 42%;'>
+      <h2 class='headline'><%= artist.name %></h2>
+      <%= image_tag("artists/#{artist.name.downcase.gsub(/ /, '_')}.jpg", :alt => artist.name, :class => 'story-image-left', :width => "230px", :height => "200px", :style => 'float: right; clear: right; margin: 0.75em;') %>
+    <% else %>
+      <div class='story-container' style='float: left; clear: left; margin: 1em 5% 1em auto;  width: 42%; '>
+      <h2 class='headline'><%= artist.name %></h2>
+      <%= image_tag("artists/#{artist.name.downcase.gsub(/ /, '_')}.jpg", :alt => artist.name, :class => 'story-image-left', :width => "230px", :height => "200px", :style => 'float: left; clear: left; margin: 0.75em;') %>
+    <% end %>
+  <% end %>
+  <span style='display: block'>
+    <span class='bold'><%= artist.origin %> --- </span>
+    <%= artist.bio %>
+    <span class='continued-link'>
+      <%= link_to "Continued on A#{artist.id}", artist %>
+    </span>
+  </span> 
+  </div>
+  <% current = current + 1 %>
+<%end %>
+    
 
-<br />

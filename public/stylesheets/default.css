@@ -12,7 +12,7 @@ nav ul li a:visited {font-style: italic; }
 nav ul li a:hover { text-decoration: underline; }
 section { margin-top: 1em; font-size: 120%; padding: 20px; }
 section h1 { font-size: 200%; }
-footer { text-align: center; margin-top: 10px; width: 960px; margin-left: auto; margin-right: auto; border-top: solid medium black; }
+footer { text-align: center; margin-top: 10px; width: 960px; margin-left: auto; margin-right: auto; border-top: solid medium black; clear: both; }
 footer nav { float: none; font-size: 0.75em;}
 table.profile { width: 100%; margin-bottom: 0 }
 table.main { width: 70%; padding: 1em; }
@@ -20,6 +20,10 @@ td.sidebar { width: 30%; padding: 1em; vertical-align: top; background: #FFC; co
 tr.even { background: none; }
 div.field, div.actions { margin-bottom: 10px; }
 
+.story-container { margin-right: 1em;  }
+.bold { font-weight: bold }
+.continued-link { font-weight: bold; font-size: 125%; }
+.story-container span { text-align: justify; }
 .profile img.gravatar { border: 1px solid #999; margin-bottom: -15px; }
 .container { width: 960px; }
 .round { -moz-border-radius:    5px; -webkit-border-radius: 5px; border-radius:         5px; }
