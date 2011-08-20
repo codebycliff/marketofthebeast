@@ -1,19 +1,14 @@
-development: adapter: mysql
-  encoding: utf8
-  database: MarketOfTheBeast
+development:
+  adapter: sqlite3
+  database: db/development.db
   pool: 5
-  username: root
-  password: "!elrenoSUBWAY1"
-  host: localhost
+  timeout: 5000
 
 test:
-  adapter: mysql
-  encoding: utf8
-  database: MarketOfTheBeast
+  adapter: sqlite3
+  database: db/test.db
   pool: 5
-  username: root
-  password:  "!elrenoSUBWAY1"
-  host: localhost
+  timeout: 5000
 
 production:
   adapter: sqlite3
