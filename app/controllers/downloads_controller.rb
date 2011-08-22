@@ -1,6 +1,12 @@
 class DownloadsController < ApplicationController
-  # GET /downloads
-  # GET /downloads.xml
+
+  before_filter :filter_authenticate, :only => :show
+
+  def download
+    dl = Download.find(params[:id])
+    send_file File.expand_path("#{Rails.root}/data/downloads/#{dl.filename}"), :type => 'application/zip'
+  end
+
   def index
     @downloads = Download.all
 
@@ -10,19 +16,16 @@ class DownloadsController < ApplicationController
     end
   end
 
-  # GET /downloads/1
-  # GET /downloads/1.xml
   def show
-    @download = Download.find(params[:id])
+    download
+    #@download = Download.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @download }
-    end
+    #respond_to do |format|
+      #format.html # show.html.erb
+      #format.xml  { render :xml => @download }
+    #end
   end
 
-  # GET /downloads/new
-  # GET /downloads/new.xml
   def new
     @download = Download.new
 

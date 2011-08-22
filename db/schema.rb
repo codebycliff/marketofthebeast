@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110822032614) do
+ActiveRecord::Schema.define(:version => 20110822052326) do
 
   create_table "artists", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20110822032614) do
     t.datetime "updated_at"
   end
 
+  create_table "downloads", :force => true do |t|
+    t.integer  "artist_id"
+    t.string   "title"
+    t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filetype"
+  end
+
   create_table "links", :force => true do |t|
     t.integer  "user_id"
     t.string   "label"
@@ -29,6 +38,16 @@ ActiveRecord::Schema.define(:version => 20110822032614) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "microposts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "microposts", ["created_at"], :name => "index_microposts_on_created_at"
+  add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
 
   create_table "shows", :force => true do |t|
     t.string   "title"
