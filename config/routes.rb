@@ -1,6 +1,8 @@
 Marketofthebeast::Application.routes.draw do
 
 
+  resources :downloads
+
   resources :shows
 
   resources :artists
