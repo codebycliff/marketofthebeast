@@ -56,6 +56,7 @@ namespace :db do
         idx = idx + 1
       end
 
+      Artist.first.downloads.create!(:title => "A Prelude (Full Length Demo)", :filename => "A_Prelude_Full_Length_Demo.zip", :filetype => 'application/zip')
       Show.create!(:title => "Market of the Beast Presents...", :description => "", :who => "Cleos Apartment, [5], [3], Mother Culture, The New Bodies and [4]", :where => "Vaudeville Mews", :when => DateTime.strptime("2011/02/11 19:30:00", "%Y/%m/%d %H:%M:%S"), :cost => "$10")
       Show.create!(:title => "The War I Survived", :description => "", :who => "The War I Survived, [3]", :where => "Vaudeville Mews", :when => DateTime.strptime("2011/07/16 21:00:00", "%Y/%m/%d %H:%M:%S"), :cost => "$7")
       Show.create!(:title => "Pictures of Then", 

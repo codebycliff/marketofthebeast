@@ -1,34 +1,32 @@
 <div class='span-24'>
+
   <p id="notice"><%= notice %></p>
   <h1><%= @artist.name %></h1>
-  <%= link_artist_image @artist %>
-  <%= @artist.bio %>
 
+  <div class='span-14 colborder'>
+  <%= @artist.bio %>
+  <span class='bold' style='display:block; margin-top: 1em;'>Downloads</span>
   <hr/>
-  <div class='span-24'>
-    <div style='margin-top: 1.5em;' class='span-11 colborder'>
-        <span class='bold' style='display:block;'>Information</span>
-        <hr/>
-        <table>
-          <tr><td>Origin:</td><td><%= @artist.origin %></td></tr>
-          <tr><td>Years Active:</td><td><%= @artist.years_active %></td></tr>
-          <tr><td>Email:</td><td><%= @artist.user.email %></td></tr>
-        </table>
-    </div>
-    <div  style='margin-top: 1.5em;' class='span-12 last'>
-      <span class='bold' style='display:block;'>Links</span>
-      <hr/>
-      <table>
+  <ul style='list-style:none;'>
+    <% @artist.downloads.each do |dl| %>
+    <li>
+      <%= link_to "Download", download_path(dl), %> 
+      <span style='margin: auto 1.25em auto 1.25em;'> |</span> 
+      <%= dl.title %>
+   </li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div style='margin-top: 1.5em;' class='span-9 last'>
+    <%= link_artist_image @artist %>
+    <table style='margin-top: 0.75em;'>
+        <tr><td>Origin:</td><td><%= @artist.origin %></td></tr>
+        <tr><td>Years Active:</td><td><%= @artist.years_active %></td></tr>
+        <tr><td>Email:</td><td><%= @artist.user.email %></td></tr>
         <% @artist.user.links.each do |link| %>
           <tr><td><%= link.label %>:</td><td><a href='<%= link.href %>'><%= link.href %></a></td></tr>
         <% end %>
       </table>
-    </div>
-  </div>
-  <div style='margin-top: 1.5em;' class='span-24'>
-    <span class='bold' style='display:block;'>Downloads</span>
-    <hr/>
-    <table>
-    </table>
   </div>
 </div>

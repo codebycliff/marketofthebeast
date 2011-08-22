@@ -36,6 +36,19 @@ module SessionsHelper
     clear_return_to
   end
 
+  def filter_authenticate
+    deny_access unless signed_in?
+  end
+
+  def filter_correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
+  end
+
+  def filter_admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
+
   private
     
     def user_from_remember_token
@@ -53,5 +66,6 @@ module SessionsHelper
     def clear_return_to
       session[:return_to] = nil
     end
+
 
 end
