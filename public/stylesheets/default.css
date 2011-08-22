@@ -19,7 +19,9 @@ table.main { width: 70%; padding: 1em; }
 td.sidebar { width: 30%; padding: 1em; vertical-align: top; background: #FFC; color: #000; }
 tr.even { background: none; }
 div.field, div.actions { margin-bottom: 10px; }
+ul.users { margin-top: 1em; }
 
+.users li { list-style: none; }
 .bold { font-weight: bold }
 .continued-link { font-weight: bold; font-size: 125%; }
 .story-container span { text-align: justify; }

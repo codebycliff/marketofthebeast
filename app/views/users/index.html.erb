@@ -1,23 +1,7 @@
-<h1 style="text-align: center; width: 100%;">Listing Users</h1>
+<h1 style="text-align: center; width: 100%;">All Users</h1>
 
-<% row_index = 0 %>
-<% per_row = 5 %>
-<% users = @users %>
-<table>
-  <% while users.length > 0 %>
-    <tr>
-      <% 5.times do %>
-        <td style='text-align: center; width: 25%;'>
-        <% if users.length > 0 %>
-            <% user = users.pop %>
-            <% avatar = gravatar_for(user) %>
-            <%= link_to avatar, user %>
-            <br/>
-            <%= link_to user.name, user %>
-        <% end %>
-        </td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-<br />
+<%= will_paginate %>
+<ul class="users">
+  <%= render @users %>
+</ul>
+<%= will_paginate %>

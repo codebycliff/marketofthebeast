@@ -11,6 +11,7 @@
     <ul class="right">
       <% if signed_in? %>
       <li id="menu-users-show"><%= link_to "Profile", current_user %></li> |
+      <li id="menu-users-edit"><%= link_to "Settings", edit_user_path(current_user) %></li> |
       <li id="menu-session-destroy"><%= link_to "Logout", logout_path, :method => :delete %></li>
       <% else %>
       <li id="menu-users-new"><%= link_to "Subscribe", new_user_path %></li> |
@@ -20,6 +21,6 @@
 	</nav>
 </header>
 <script>
-  $(".selected-menu-item").removeClass("selected-menu-item");
-  $("#menu-<%= params[:controller] + "-" + params[:action] %>").addClass("selected-menu-item");
+  jQuery(".selected-menu-item").removeClass("selected-menu-item");
+  jQuery("#menu-<%= params[:controller] + "-" + params[:action] %>").addClass("selected-menu-item");
 </script>
