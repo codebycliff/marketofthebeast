@@ -20,6 +20,19 @@ td.sidebar { width: 30%; padding: 1em; vertical-align: top; background: #FFC; co
 tr.even { background: none; }
 div.field, div.actions { margin-bottom: 10px; }
 ul.users { margin-top: 1em; }
+h1.comment { margin-bottom: 0.3em; }
+table.comments { margin-top: 1em; }
+table.comments { margin-top: 1em; }
+table.comments tr { height: 70px; }
+table.comments tr td.gravatar { border-top: 1px solid #ccc; vertical-align: top; width: 50px; }
+table.comments tr td.comment { border-top: 1px solid #ccc; vertical-align: top; padding-top: 10px; }
+table.comments tr td.comment span.timestamp { display: block; font-size: 85%; color: #666; }
+div.user_info a { text-decoration: none; }
+div.user_info span.user_name { position: absolute; }
+div.user_info img { padding-right: 0.1em; }
+div.user_info span.comments { font-size: 80%; }
+form.new_comment { margin-bottom: 2em; }
+form.new_comment textarea { height: 4em; margin-bottom: 0; }
 
 .users li { list-style: none; }
 .bold { font-weight: bold }
@@ -42,3 +55,4 @@ ul.users { margin-top: 1em; }
 #header-date {width: 100%; text-align: center; }
 #menu { margin-top: 0.2em; height: 25px; border-top: solid medium black; border-bottom: solid medium black;  }
 #join-button { margin-left: auto; margin-right: auto; display: block; text-align: center; width: 190px; color: #FFFFFF; background: #000000; font-size: 150%; font-weight: bold; padding: 20px; }
+

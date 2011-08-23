@@ -5,6 +5,7 @@ gem 'mysql'
 gem 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'acts_as_commentable'
 
 group :development do
   gem 'rspec-rails'

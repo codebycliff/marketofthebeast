@@ -5,10 +5,22 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% unless @user.comments.empty? %>
+        <table class="comments" summary="User comments">
+          <%= render @comments %>
+        </table>
+        <%= will_paginate @comments %>
+      <% end %>
     </td>
     <td class="sidebar round">
-      <strong>Name</strong><%= @user.name %><br/>
-      <strong>Url</strong><%= link_to user_path(@user), @user %>
+      <table>
+        <tr><td><strong>Name</strong></td><td><%= @user.name %></td></tr>
+        <tr><td><strong>Email</strong></td><td><%= link_to user_path(@user), @user %></td></tr>
+        <tr><td><strong>Url</strong></td><td><%= link_to user_path(@user), @user %></td></tr>
+        <tr><td><strong>Microposts</strong></td><td><%= @user.microposts.count %></td></tr>
+        <% @user.links.each do |link| %>
+          <tr><td><strong><%= link.label %></strong></td><td><%= link_to link.href, link.href %></td></tr>
+        <% end %>
     </td>
   </tr>
 </table>

@@ -1,32 +1,68 @@
+<div id='comment-window' style='display: none'>
+  <form id='comment-form'>
+    <div class="field" style='width: 100%; margin: 1em;'>
+      <input size='47' type='text' name='comment-title' id='comment-title' value='Title...'/>
+    </div> 
+    <div class="field" style='width: 100%; margin: 1em;'>
+      <textarea style='height: auto;' cols='50' rows='3' name='comment-comment' id='comment-comment'>Enter comment here...</textarea>
+    </div> 
+  </form>
+</div>
+<script type='text/javascript'>
+  jQuery('#comment-window').dialog({
+    autoOpen: false,
+    show: "blind",
+    title: "Create Comment",
+    width: "450",
+    height: "275",
+    modal: true,
+    buttons: {
+      "Submit": function(resp) {
+        alert("Submitting");
+      }
+    }
+    });
+</script>
 <div class='span-24'>
 
   <p id="notice"><%= notice %></p>
   <h1><%= @artist.name %></h1>
 
   <div class='span-14 colborder'>
-  <%= @artist.bio %>
-  <span class='bold' style='display:block; margin-top: 1em;'>Downloads</span>
-  <hr/>
-  <ul style='list-style:none;'>
-    <% @artist.downloads.each do |dl| %>
-    <li>
-      <%= link_to "Download", download_path(dl), %> 
-      <span style='margin: auto 1.25em auto 1.25em;'> |</span> 
-      <%= dl.title %>
-   </li>
-    <% end %>
-  </ul>
+    <%= link_artist_image @artist %>
+    <%= @artist.bio %>
+    <table style='margin-top: 0.75em;'>
+      <tr><td>Origin:</td><td><%= @artist.origin %></td></tr>
+      <tr><td>Years Active:</td><td><%= @artist.years_active %></td></tr>
+      <tr><td>Email:</td><td><%= @artist.user.email %></td></tr>
+      <% @artist.user.links.each do |link| %>
+        <tr><td><%= link.label %>:</td><td><a href='<%= link.href %>'><%= link.href %></a></td></tr>
+      <% end %>
+    </table>
+    <span class='bold' style='display:block; margin-top: 1em;'>Downloads</span>
+    <hr/>
+    <ul style='list-style:none;'>
+      <% @artist.downloads.each do |dl| %>
+        <li>
+          <%= link_to "Download", download_path(dl), %> 
+          <span style='margin: auto 1.25em auto 1.25em;'> |</span> 
+          <%= dl.title %>
+       </li>
+      <% end %>
+    </ul>
   </div>
 
-  <div style='margin-top: 1.5em;' class='span-9 last'>
-    <%= link_artist_image @artist %>
-    <table style='margin-top: 0.75em;'>
-        <tr><td>Origin:</td><td><%= @artist.origin %></td></tr>
-        <tr><td>Years Active:</td><td><%= @artist.years_active %></td></tr>
-        <tr><td>Email:</td><td><%= @artist.user.email %></td></tr>
-        <% @artist.user.links.each do |link| %>
-          <tr><td><%= link.label %>:</td><td><a href='<%= link.href %>'><%= link.href %></a></td></tr>
-        <% end %>
+  <div class='span-9 last'>
+    <div>
+      <span class='bold' style='display:block;  margin-top: 1em;'>
+        Comments
+        <button style='float: right;' value="Add Comment" onclick="jQuery('#comment-window').dialog('open'); return false;">Add Comment</button>
+      </span>
+    </div>
+    <% unless @artist.comments.empty? %>
+      <table class='comments'>
+        <%= render @comments %>
       </table>
+    <% end %>
   </div>
 </div>
