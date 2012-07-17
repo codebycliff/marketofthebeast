@@ -55,7 +55,7 @@ GEM
       treetop (~> 1.4.8)
     map_by_method (0.8.3)
     mime-types (1.16)
-    mysql (2.8.1)
+    mysql2 (0.3.11)
     nokogiri (1.5.0)
     polyglot (0.3.2)
     rack (1.2.3)
@@ -122,7 +122,7 @@ DEPENDENCIES
   gravatar_image_tag
   hirb
   map_by_method
-  mysql
+  mysql2
   rails (= 3.0.9)
   rspec-rails
   spork

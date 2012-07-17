@@ -1,0 +1,26 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: marketofthebeast
+  pool: 5
+  username: marketofthebeast
+  password: "marketofthebeast"
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: marketofthebeast
+  pool: 5
+  username: marketofthebeast
+  password: "marketofthebeast"
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: marketofthebeast
+  pool: 5
+  username: marketofthebeast
+  password: "marketofthebeast"
+  host: localhost
